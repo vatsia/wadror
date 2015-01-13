@@ -16,6 +16,6 @@
 !/log/.keep
 /tmp
 
-#igore committer
+#ignore committer
 /commit.sh
 
