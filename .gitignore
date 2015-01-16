@@ -19,3 +19,5 @@
 #ignore committer
 /commit.sh
 
+# ignore .idea
+/.idea
