@@ -57,4 +57,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'breweries#index'
+  get 'kaikki_bisset', to: 'beers#index'
+  get 'ratings', to: 'ratings#index'
 end
