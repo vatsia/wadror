@@ -10,4 +10,8 @@ class Beer < ActiveRecord::Base
     #amount / ratings.count
     ratings.average(:score)
   end
+
+  def to_s
+    "#{name}, panimo: #{brewery.name}"
+  end
 end

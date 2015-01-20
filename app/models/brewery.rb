@@ -12,5 +12,7 @@ class Brewery < ActiveRecord::Base
     puts "changed to year #{year}"
   end
 
-
+  def to_s
+    name
+  end
 end
