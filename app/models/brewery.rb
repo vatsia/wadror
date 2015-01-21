@@ -1,5 +1,8 @@
 class Brewery < ActiveRecord::Base
-  has_many :beers
+  include AverageRating
+
+  has_many :beers, dependent: :destroy
+  has_many :ratings, through: :beers
 
   def print_report
     puts name
@@ -15,4 +18,8 @@ class Brewery < ActiveRecord::Base
   def to_s
     name
   end
+
+  #def average_rating
+  #  ratings.average(:score)
+  #end
 end
