@@ -8,6 +8,7 @@
   Has made <%= pluralize(@user.ratings.count, 'rating') %> and rating average is <%= @user.average_rating %>
 </p>
 
+<h2>ratings</h2>
 <ul>
   <% @user.ratings.each do |rating| %>
     <li>
