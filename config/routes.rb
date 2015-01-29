@@ -67,4 +67,5 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
 
   resources :ratings, only: [:index, :new, :create, :destroy]
+  resource :session, only: [:new, :create, :delete]
 end
