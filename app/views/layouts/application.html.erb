@@ -13,8 +13,15 @@
   <%= link_to 'ratings', ratings_path %>
 </div>
 
+<<<<<<< HEAD
 <% if not session[:user_id].nil? %>
     <p><%= User.find(session[:user_id]).username %> signed in</p>
+=======
+<% if session[:last_rating].nil? %>
+    <p>no ratings given</p>
+<% else %>
+    <p>previous rating: <%= session[:last_rating] %></p>
+>>>>>>> 08d1fe6e4dad58b0ffa8e5de7707362a068f3580
 <% end %>
 
 <%= yield %>
