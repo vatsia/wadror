@@ -18,6 +18,7 @@
 
 #ignore committer
 /commit.sh
+/heroku.sh
 
 # ignore .idea
 /.idea
