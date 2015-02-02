@@ -21,14 +21,6 @@ ActiveRecord::Schema.define(version: 20150130152527) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "beerclubs", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "founded"
-    t.string   "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "beers", force: :cascade do |t|
     t.string   "name"
     t.string   "style"
