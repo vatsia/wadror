@@ -42,5 +42,10 @@ describe User do
       expect(user.ratings.count).to eq(2)
       expect(user.average_rating).to eq(15.0)
     end
+
+    it "has method for determining the favorite_beer" do
+      user = FactoryGirl.create(:user)
+      expect(user).to respond_to(:favorite_beer)
+    end
   end
 end
