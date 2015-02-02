@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
-  before_action :set_breweries_and_styles_for_template, :set_beer, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_beer, only: [:show, :edit, :update, :destroy]
+  before_action :set_breweries_and_styles_for_template, only: [:edit, :new, :create]
   # GET /beers
   # GET /beers.json
   def index
@@ -8,12 +8,13 @@ class BeersController < ApplicationController
   end
 
   # GET /beers/1
-  # GET /beers/1.json
+  # GET /beers/1.json This is a live shell. Type in here.
   def show
   end
 
   # GET /beers/new
   def new
+    set_breweries_and_styles_for_template
     @beer = Beer.new
   end
 
@@ -24,6 +25,7 @@ class BeersController < ApplicationController
   # POST /beers
   # POST /beers.json
   def create
+    set_breweries_and_styles_for_template
     @beer = Beer.new(beer_params)
 
     respond_to do |format|
