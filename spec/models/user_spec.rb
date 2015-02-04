@@ -72,6 +72,69 @@ describe User do
       expect(user.favorite_beer).to eq(best)
     end
   end
+
+  describe "favorite style" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for determining one" do
+      expect(user).to respond_to(:favorite_style)
+    end
+
+    it "without ratings does not have one" do
+      # oispa kaljaa
+      expect(user.favorite_style).to eq(nil)
+    end
+
+    it "don't give anything else when only one rating" do
+      beer = create_beer_with_rating(35, user)
+      expect(user.favorite_style).to eq(beer.style)
+    end
+
+    it "is the most favorited style" do
+      b1 = FactoryGirl.create :beer
+      b2 = FactoryGirl.create :beer2
+
+      FactoryGirl.create(:rating, beer:b1, user:user)
+      FactoryGirl.create(:rating, beer:b1, user:user)
+
+      FactoryGirl.create(:rating, beer:b2, user:user)
+      FactoryGirl.create(:rating2, beer:b2, user:user)
+
+      expect(user.favorite_style).to eq(b2.style)
+    end
+  end
+
+  describe "favorite brewery" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for determining one" do
+      expect(user).to respond_to(:favorite_brewery)
+    end
+
+    it "without ratings does not have one" do
+      # oispa kaljaa
+      expect(user.favorite_brewery).to eq(nil)
+    end
+
+    it "don't give anything else when only one rating" do
+      beer = create_beer_with_rating(35, user)
+      expect(user.favorite_brewery).to eq(beer.brewery)
+    end
+
+    it "is the most favorited style" do
+      b1 = FactoryGirl.create :beer
+      b2 = FactoryGirl.create :beer2
+
+      FactoryGirl.create(:rating, beer:b1, user:user)
+      FactoryGirl.create(:rating, beer:b1, user:user)
+
+      FactoryGirl.create(:rating, beer:b2, user:user)
+      FactoryGirl.create(:rating2, beer:b2, user:user)
+
+      expect(user.favorite_brewery).to eq(b2.brewery)
+    end
+  end
+
 end
 
 def create_beers_with_ratings(*scores, user)

@@ -17,4 +17,14 @@ class User < ActiveRecord::Base
     return nil if ratings.empty?
     ratings.sort_by { |r| r.score}.last.beer
   end
+
+  def favorite_style
+    return nil if ratings.empty?
+    ratings.joins(:beer).group(:style).order(score: :desc).limit(1).first.beer.style
+  end
+
+  def favorite_brewery
+    return nil if ratings.empty?
+    ratings.joins(:beer).group(:brewery_id).order(score: :desc).limit(1).first.beer.brewery
+  end
 end
