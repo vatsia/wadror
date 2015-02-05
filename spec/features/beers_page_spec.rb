@@ -9,7 +9,7 @@ describe "Beers page" do
     select 'Weizen', from:'beer_style'
     select 'anonymous', from:'beer_brewery_id'
     click_button 'Create Beer'
-    
+
     expect(page).to have_content('Beer was successfully created.')
   end
 

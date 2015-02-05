@@ -22,4 +22,14 @@ describe "ratings" do
     expect(beer1.ratings.count).to eq(1)
     expect(beer1.average_rating).to eq(15.0)
   end
+
+  it "are shown on page ratings with their count" do
+    numbers = [11, 30, 33, 26, 50, 5]
+    numbers.each do |scr|
+      FactoryGirl.create :brewery, score:scr
+    end
+
+    visit ratings_path
+    expect(page).to have_content("Number of ratings: #{numbers.count}")
+  end
 end
