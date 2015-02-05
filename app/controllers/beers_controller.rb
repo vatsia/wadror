@@ -14,7 +14,7 @@ class BeersController < ApplicationController
 
   # GET /beers/new
   def new
-    set_breweries_and_styles_for_template
+    #set_breweries_and_styles_for_template
     @beer = Beer.new
   end
 
@@ -25,7 +25,7 @@ class BeersController < ApplicationController
   # POST /beers
   # POST /beers.json
   def create
-    set_breweries_and_styles_for_template
+    #set_breweries_and_styles_for_template
     @beer = Beer.new(beer_params)
 
     respond_to do |format|
