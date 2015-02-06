@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-its'
 end
 
 group :development, :test do
@@ -59,6 +60,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'simplecov', require: false
 end
 
 ruby '2.2.0'

@@ -2,6 +2,10 @@ require 'rails_helper'
 
 describe User do
   it "has the username set correctly" do
+    # TODO do own test for these
+    BeerClub
+    BeerClubsController
+    MembershipsController
     user = User.new username:"Pekka"
 
     expect(user.username).to eq("Pekka")
