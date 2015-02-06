@@ -24,12 +24,30 @@ describe "ratings" do
   end
 
   it "are shown on page ratings with their count" do
-    numbers = [11, 30, 33, 26, 50, 5]
-    numbers.each do |scr|
-      FactoryGirl.create :brewery, score:scr
+    numbers = ['11', '30', '33', '26', '50', '5']
+    numbers.each do |score|
+      FactoryGirl.create :rating, score:score, beer:beer1, user:user
     end
 
     visit ratings_path
+
+    numbers.each do |score|
+      expect(page).to have_content(score)
+    end
+
     expect(page).to have_content("Number of ratings: #{numbers.count}")
+  end
+
+  it "are deleted from database when user clicks removinglink" do
+    #sign_in(username:"Pekka", password:"Foobar1")
+    beer = FactoryGirl.create :beer
+    ratinglist = [12, 33, 21, 34, 50]
+    ratinglist.each do |score|
+      FactoryGirl.create :rating, score:score, beer:beer, user:user
+    end
+
+    visit user_path(user)
+    expect{page.first(:link, "delete").click}.to change{user.ratings.count}.by(-1)
+
   end
 end

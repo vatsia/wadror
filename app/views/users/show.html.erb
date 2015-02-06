@@ -6,7 +6,12 @@
 
 <p>
   <% if @user.ratings.count > 0 %>
-    Has made <%= pluralize(@user.ratings.count, 'rating') %> average is <%= @user.average_rating %>, favorite beer style is <%= @user.favorite_style %> and favourite brewery is <%= @user.favorite_brewery %>
+    <ul>
+        <li>Has made <%= pluralize(@user.ratings.count, 'rating') %></li>
+        <li>Rating average is <%= @user.average_rating %></li>
+        <li>Favorite beer style is <%= @user.favorite_style %></li>
+        <li>Favorite brewery is <%= @user.favorite_brewery %></li>
+    </ul>
   <% end %>
 </p>
 
