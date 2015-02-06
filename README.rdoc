@@ -1,3 +1,0 @@
-== README
-
-* Heroku-instance: https://sheltered-depths-2877.herokuapp.com
