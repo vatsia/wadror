@@ -12,3 +12,4 @@ script:
 deploy:
   provider: heroku
   api_key: "8f913446-16f4-407f-bb1b-fccb27489438"
+  name: "sheltered-depths-2877"
