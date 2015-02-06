@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
- - 2.2.0 rescue nil
+ - 2.2.0
 
 script:
  - bundle exec rake db:migrate --trace
