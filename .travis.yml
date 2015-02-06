@@ -11,5 +11,6 @@ script:
 
 deploy:
   provider: heroku
-  api_key: "8f913446-16f4-407f-bb1b-fccb27489438"
   app: "sheltered-depths-2877"
+  api_key: "8f913446-16f4-407f-bb1b-fccb27489438"
+  run: "rake db:migrate"
