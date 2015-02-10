@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22438c02-f4e1-4d0e-b82d-2882a329e733" name="Default" comment="Places-controller, model and view made">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/places_spec.rb" afterPath="$PROJECT_DIR$/spec/features/places_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ratebeer.iws" />
@@ -91,8 +92,8 @@
       <file leaf-file-name="places_spec.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/features/places_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10830325" vertical-offset="0" max-vertical-offset="831">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.8231047" vertical-offset="0" max-vertical-offset="831">
+              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -973,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/places_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10830325" vertical-offset="0" max-vertical-offset="831">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.8231047" vertical-offset="0" max-vertical-offset="831">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
           <folding />
         </state>
       </provider>
