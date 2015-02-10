@@ -4,7 +4,7 @@ class BeermappingApi
     response = HTTParty.get "#{url}#{ERB::Util.url_encode(city)}"
     places = response.parsed_response["bmp_locations"]["location"]
 
-    return [] if places_from_api.is_a? (Hash) and places['id'].nil?
+    return [] if places.is_a? (Hash) and places['id'].nil?
     places = [places] if places.is_a? (Hash)
     places.inject([]) do |set, place|
       set << Place.new(place)
