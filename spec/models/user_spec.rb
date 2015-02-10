@@ -96,7 +96,7 @@ describe User do
 
     it "is the most favorited style" do
       b1 = FactoryGirl.create :beer
-      b2 = FactoryGirl.create :beer2
+      b2 = FactoryGirl.create :beer
 
       FactoryGirl.create(:rating, beer:b1, user:user)
       FactoryGirl.create(:rating, beer:b1, user:user)
@@ -127,7 +127,7 @@ describe User do
 
     it "is the most favorited style" do
       b1 = FactoryGirl.create :beer
-      b2 = FactoryGirl.create :beer2
+      b2 = FactoryGirl.create :beer
 
       FactoryGirl.create(:rating, beer:b1, user:user)
       FactoryGirl.create(:rating, beer:b1, user:user)

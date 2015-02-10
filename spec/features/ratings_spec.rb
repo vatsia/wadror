@@ -24,7 +24,7 @@ describe "Ratings" do
     FactoryGirl.create(:rating, score:20, beer:beer1, user:user)
     FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
     visit ratings_path
-    expect(page).to have_content "Total of 3 ratings given"
+    expect(page).to have_content "Number of ratings: 3"
     Rating.all.each do |rating|
       expect(page).to have_content rating.to_s
     end
