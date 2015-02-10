@@ -1,27 +1,19 @@
 require 'rails_helper'
-
-describe "Beers page" do
-  let!(:brewery){FactoryGirl.create :brewery}
-
-  it "should have one when created with valid credentials" do
+describe "Beers" do
+  it "can be added if a valid name given" do
     visit new_beer_path
-    fill_in 'beer_name', with:"Validibisse"
-    select 'Weizen', from:'beer_style'
-    select 'anonymous', from:'beer_brewery_id'
-    click_button 'Create Beer'
-
-    expect(page).to have_content('Beer was successfully created.')
+    fill_in('beer_name', with:'Karhu')
+    expect{
+      click_button('Create Beer')
+    }.to change{Beer.count}.by(1)
   end
-
-  it "should get back to beer creation page if name is not valid" do
+  it "is not added if a invalid valid name given" do
     visit new_beer_path
-    fill_in 'beer_name', with:""
-    select 'Weizen', from:'beer_style'
-    select 'anonymous', from:'beer_brewery_id'
-    click_button 'Create Beer'
-
-    expect(page).to have_content('Name can\'t be blank')
+    expect{
+      click_button('Create Beer')
+    }.to change{Beer.count}.by(0)
     expect(current_path).to eq(beers_path)
-    expect(Beer.count).to eq(0)
+    expect(page).to have_content "New beer"
+    expect(page).to have_content "Name can't be blank"
   end
 end
