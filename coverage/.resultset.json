@@ -56,6 +56,14 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
         4,
         null,
         null
@@ -472,6 +480,14 @@
         null,
         null,
         null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/lotto/dev/ror/wadror/app/controllers/ratings_controller.rb": [
@@ -662,6 +678,6 @@
         null
       ]
     },
-    "timestamp": 1423670233
+    "timestamp": 1423698520
   }
 }

@@ -29,7 +29,7 @@ describe "Places" do
     expect(page).to have_content("Pub Magneetti")
   end
 
-  it "if many are returned by API, are shown on the page" do
+  it "if none returned by API, error is shown on the page" do
     allow(BeermappingApi).to receive(:places_in).with("kumpula").and_return([])
 
     visit places_path
