@@ -12,15 +12,6 @@
         null,
         null
       ],
-      "/home/lotto/dev/ror/wadror/app/models/style.rb": [
-        1,
-        1,
-        null,
-        1,
-        30,
-        null,
-        null
-      ],
       "/home/lotto/dev/ror/wadror/app/helpers/application_helper.rb": [
         1,
         null
@@ -231,6 +222,15 @@
         28,
         0,
         null,
+        null,
+        null
+      ],
+      "/home/lotto/dev/ror/wadror/app/models/style.rb": [
+        1,
+        1,
+        null,
+        1,
+        30,
         null,
         null
       ],
@@ -778,6 +778,6 @@
         null
       ]
     },
-    "timestamp": 1423777858
+    "timestamp": 1424031364
   }
 }
