@@ -13,3 +13,4 @@ deploy:
     secure: YrPWBRfgMx1xk9EbGLrPrCi262KrgNMgnX0wi5wuI62gGx42wNKS9lJbdN3E7nTU2pzMNF4MRaPy3IA7ZnYXbvC9gsO9BBRzEUXoZzxFjFsBXhvhgC2CpFC1u3hsBAUvzFeDn9tvMaGav5PUceZXhYXfiI/wG+2InMBOisD2/W8=
   on:
     repo: vatsia/wadror
+  run: "rake db:migrate"

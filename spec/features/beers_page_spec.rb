@@ -11,7 +11,7 @@ describe "Beers" do
     visit new_beer_path
     fill_in('beer_name', with:'Karhu')
     save_and_open_page
-    
+
     expect{
       click_button('Create Beer')
     }.to change{Beer.count}.by(1)
