@@ -64,6 +64,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def toggle_penalty
+    if current_user.admin
+      user = User.find(params[:id])
+      user.update_attribute :penalty, (not user.penalty)
+      new_status = user.penalty? ? "frozen" : "unfrozen"
+      redirect_to :back, notice:"User is #{new_status}"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

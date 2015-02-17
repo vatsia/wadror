@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  def to_s
+    username
+  end
+
   def favorite_beer
     return nil if ratings.empty?
     ratings.sort_by { |r| r.score}.last.beer
@@ -26,5 +30,10 @@ class User < ActiveRecord::Base
   def favorite_brewery
     return nil if ratings.empty?
     ratings.joins(:beer).group(:brewery_id).order(score: :desc).limit(1).first.beer.brewery
+  end
+
+  def self.top(n)
+    sorted_by_rating_in_desc_order = User.all.sort_by{|b| - (b.average_rating || 0)}
+    sorted_by_rating_in_desc_order.take(n)
   end
 end

@@ -5,11 +5,15 @@ Rails.application.routes.draw do
 
   resources :memberships
 
-  resources :users
+  resources :users do
+    post 'toggle_penalty', on: :member
+  end
 
   resources :beers
 
-  resources :breweries
+  resources :breweries do
+    post 'toggle_activity', on: :member
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
