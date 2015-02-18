@@ -10,7 +10,7 @@
   <% items.each do |item| %>
       <tr>
         <td><%= link_to item, item %></td>
-        <td><%= round(item.average_rating) %></td>
+        <td><span class="label label-info"><%= round(item.average_rating) %></span></td>
         <td></td>
       </tr>
   <% end %>

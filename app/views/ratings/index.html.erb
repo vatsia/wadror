@@ -34,14 +34,14 @@
         <td><%= user.favorite_beer %></td>
         <td><%= user.favorite_style %></td>
         <td><%= user.favorite_brewery %></td>
-        <td><%= user.ratings.count %></td>
+        <td><span class="label label-info"><%= user.ratings.count %></span></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <h2>Most recent ratings</h2>
-<p>Number of ratings: <%= @ratings_count %></p>
+<p>Number of ratings: <span class="label label-info"><%= @ratings_count %></span></p>
 <ul>
   <% @recent_ratings.each do |rating| %>
     <li><%= rating.to_s %>, <%= link_to rating.user, rating.user %></li>

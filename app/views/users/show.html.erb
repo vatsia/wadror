@@ -11,8 +11,8 @@
 <p>
   <% if @user.ratings.count > 0 %>
     <ul>
-        <li>Has made <%= pluralize(@user.ratings.count, 'rating') %></li>
-        <li>Rating average is <%= round(@user.average_rating) %></li>
+        <li>Has made <span class="label label-info"><%= pluralize(@user.ratings.count, 'rating') %></span></li>
+        <li>Rating average is <span class="label label-info"><%= round(@user.average_rating) %></span></li>
         <li>Favorite beer style is <%= @user.favorite_style %></li>
         <li>Favorite brewery is <%= @user.favorite_brewery %></li>
     </ul>
