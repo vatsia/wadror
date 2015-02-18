@@ -44,7 +44,7 @@ describe "Ratings" do
     my_rating2 = FactoryGirl.create(:rating, score:30, beer:beer2, user:user)
     other_rating = FactoryGirl.create(:rating, score:20, beer:beer1)
     visit user_path(user.id)
-    deleted_rating = page.all('li')[1].text
+    deleted_rating = page.all('li')[17].text
     expect{
       page.all('a', text:'delete' )[1].click
     }.to change{Rating.count}.from(3).to(2)

@@ -41,6 +41,7 @@
 </table>
 
 <h2>Most recent ratings</h2>
+<p>Number of ratings: <%= @ratings_count %></p>
 <ul>
   <% @recent_ratings.each do |rating| %>
     <li><%= rating.to_s %>, <%= link_to rating.user, rating.user %></li>

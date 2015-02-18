@@ -10,7 +10,6 @@ describe "Beers" do
   it "can be added if a valid name given" do
     visit new_beer_path
     fill_in('beer_name', with:'Karhu')
-    save_and_open_page
 
     expect{
       click_button('Create Beer')

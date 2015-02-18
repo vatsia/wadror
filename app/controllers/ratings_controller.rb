@@ -5,6 +5,7 @@ class RatingsController < ApplicationController
     @top_styles = Style.top(3)
     @top_users = User.top(3)
     @recent_ratings = Rating.recent
+    @ratings_count = Rating.count
   end
 
   def new
