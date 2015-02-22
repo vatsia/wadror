@@ -8,6 +8,34 @@ class BreweriesController < ApplicationController
   def index
     @active_breweries = Brewery.active
     @retired_breweries = Brewery.retired
+
+    order = params[:order] || 'name'
+    if session[:order] == order && session[:reversing] == false
+      @active_breweries = case order
+                            when 'name' then @active_breweries.sort_by{|b| b.name}.reverse
+                            when 'year' then @active_breweries.sort_by{|b| b.year}.reverse
+                          end
+
+      @retired_breweries = case order
+                             when 'name' then @retired_breweries.sort_by{|b| b.name}.reverse
+                             when 'year' then @retired_breweries.sort_by{|b| b.year}.reverse
+                           end
+      session[:reversing] = true
+    else
+      @active_breweries = case order
+                            when 'name' then @active_breweries.sort_by{|b| b.name}
+                            when 'year' then @active_breweries.sort_by{|b| b.year}
+                          end
+
+      @retired_breweries = case order
+                             when 'name' then @retired_breweries.sort_by{|b| b.name}
+                             when 'year' then @retired_breweries.sort_by{|b| b.year}
+                           end
+      session[:reversing] = false
+    end
+
+    session[:order] = order
+    puts(order)
   end
 
   # GET /breweries/1
@@ -79,6 +107,6 @@ class BreweriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brewery_params
-      params.require(:brewery).permit(:name, :year, :active)
+      params.require(:brewery).permit(:name, :year, :active, :order)
     end
 end
