@@ -8,6 +8,7 @@ class BreweriesController < ApplicationController
   def index
     @active_breweries = Brewery.active
     @retired_breweries = Brewery.retired
+    @breweries = Brewery.all
 
     order = params[:order] || 'name'
     if session[:order] == order && session[:reversing] == false
@@ -89,6 +90,9 @@ class BreweriesController < ApplicationController
       format.html { redirect_to breweries_url, notice: 'Brewery was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def list
   end
 
   def toggle_activity
