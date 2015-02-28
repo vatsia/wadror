@@ -66,6 +66,7 @@ end
 
 gem 'httparty'
 ruby '2.2.0'
+gem 'jquery-turbolinks'
 
 gem 'bootstrap-sass'
 group :development do

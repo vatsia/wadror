@@ -79,6 +79,7 @@ Rails.application.routes.draw do
   get 'signin', to: 'sessions#new'
   #get 'places', to: 'places#index'
   post 'places', to: 'places#search'
+  get 'beerlist', to:'beers#list'
 
   resources :ratings, only: [:index, :new, :create, :destroy]
   resource :session, only: [:new, :create, :delete]

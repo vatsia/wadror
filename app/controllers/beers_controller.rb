@@ -76,6 +76,9 @@ class BeersController < ApplicationController
     end
   end
 
+  def list
+  end
+
   def set_breweries_and_styles_for_template
     @breweries = Brewery.all
     @styles = Style.all

@@ -35,7 +35,6 @@ class BreweriesController < ApplicationController
     end
 
     session[:order] = order
-    puts(order)
   end
 
   # GET /breweries/1
