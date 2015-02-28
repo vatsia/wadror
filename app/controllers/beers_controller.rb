@@ -79,6 +79,9 @@ class BeersController < ApplicationController
   def list
   end
 
+  def nglist
+  end
+
   def set_breweries_and_styles_for_template
     @breweries = Brewery.all
     @styles = Style.all

@@ -80,7 +80,7 @@ Rails.application.routes.draw do
   #get 'places', to: 'places#index'
   post 'places', to: 'places#search'
   get 'beerlist', to:'beers#list'
-
+  get 'ngbeerlist', to:'beers#nglist'
   resources :ratings, only: [:index, :new, :create, :destroy]
   resource :session, only: [:new, :create, :delete]
   resources :places, only: [:index, :show]
