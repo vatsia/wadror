@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :beer_clubs
 
-  resources :memberships
+  resources :memberships do
+    post 'confirm', on: :member
+  end
 
   resources :users do
     post 'toggle_penalty', on: :member
@@ -82,6 +84,7 @@ Rails.application.routes.draw do
   get 'beerlist', to:'beers#list'
   get 'ngbeerlist', to:'beers#nglist'
   get 'brewerylist', to:'breweries#list'
+
   resources :ratings, only: [:index, :new, :create, :destroy]
   resource :session, only: [:new, :create, :delete]
   resources :places, only: [:index, :show]

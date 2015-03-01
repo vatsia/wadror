@@ -11,10 +11,19 @@
 
 <h2>Members of this club</h2>
 <ul>
-  <% @beer_club.users.each do |user| %>
-    <li><%= link_to user.username, user %></li>
+  <% @beer_club.confirmed_memberships.each do |m| %>
+    <li><%= link_to m.user.username, m.user %></li>
   <% end %>
 </ul>
+
+<% if current_user && current_user.is_member(@beer_club) %>
+    <h2>Unconfirmed members</h2>
+    <ul>
+      <% @beer_club.unconfirmed_memberships.each do |m| %>
+        <li><%= link_to m.user.username, m.user %><%= link_to 'Confirm user',  confirm_membership_path(m.id), class: 'btn btn-default', method: :post %></li>
+      <% end %>
+    </ul>
+<% end %>
 
 <% if current_user %>
   <% if !@beer_club.users.exists?(current_user) %>

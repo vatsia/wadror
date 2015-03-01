@@ -32,11 +32,20 @@
 </ul>
 
 <h2>beer clubs</h2>
+<b>Member of: </b>
 <ul>
-  <% @user.beer_clubs.each do |club| %>
-  <li><%= link_to club.name, club %></li>
+  <% @user.confirmed_mships(@user.id).each do |membership| %>
+    <li><%= link_to membership.beer_club.name, membership.beer_club %></li>
   <% end %>
 </ul>
+
+<b>Pending memberships:</b>
+<ul>
+  <% @user.unconfirmed_mships(@user.id).each do |membership| %>
+      <li><%= link_to membership.beer_club.name, membership.beer_club %></li>
+  <% end %>
+</ul>
+
 
 <% if current_user.admin == true %>
     <% if @user.penalty %>

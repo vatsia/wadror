@@ -17,6 +17,16 @@ class User < ActiveRecord::Base
     username
   end
 
+  def is_member(c)
+    if self.beer_clubs.include? c
+      m = Membership.where(:user_id => self.id, :beer_club_id => c.id).first.confirmed
+      if !m.nil?
+        return true
+      else
+        return false
+      end
+    end
+  end
 
   def favorite_beer
     return nil if ratings.empty?
@@ -67,5 +77,13 @@ class User < ActiveRecord::Base
   def self.top(n)
     sorted_by_rating_in_desc_order = User.all.sort_by{|b| - (b.average_rating || 0)}
     sorted_by_rating_in_desc_order.take(n)
+  end
+
+  def confirmed_mships(uid)
+    Membership.where(:confirmed => true, :user_id => uid)
+  end
+
+  def unconfirmed_mships(uid)
+    Membership.where(:confirmed => [nil, false], :user_id => uid)
   end
 end
