@@ -49,6 +49,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'rack-mini-profiler'
 end
 
 group :production do
