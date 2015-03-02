@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Rating statistics</h1>
+<% cache 'ratings', expires_in:10.minutes do %>
 <div class="row">
   <div class="col-md-4">
     <h2>Top beers</h2>
@@ -47,7 +48,7 @@
     <li><%= rating.to_s %>, <%= link_to rating.user, rating.user %></li>
   <% end %>
 </ul>
-
+<% end %>
 <br>
 
 <% if current_user %>
