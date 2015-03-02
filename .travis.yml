@@ -1,6 +1,6 @@
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 language: ruby
 rvm:
 - 2.2.0
@@ -16,4 +16,8 @@ deploy:
     secure: YrPWBRfgMx1xk9EbGLrPrCi262KrgNMgnX0wi5wuI62gGx42wNKS9lJbdN3E7nTU2pzMNF4MRaPy3IA7ZnYXbvC9gsO9BBRzEUXoZzxFjFsBXhvhgC2CpFC1u3hsBAUvzFeDn9tvMaGav5PUceZXhYXfiI/wG+2InMBOisD2/W8=
   on:
     repo: vatsia/wadror
-  run: "rake db:migrate"
+  run: rake db:migrate
+env:
+  global:
+  - secure: ZhkgLokY68EM99ULgvZsjh/O8LAqM0NHlXzDVJF4IDl6nq60fXXrLLD5DNuVG3gwp9ThcwmbLTyPp4fj/I2f1kTnvTWFFIfNoJo0k4wkKiqaxr70y7+HrD3GdjqdspWXTFsrPX1nSL/1f270sfz2swPUjrg5q2E/Oqh9KWvejL4=
+  - secure: STRNk2KVshRktmBQ+sZluRoi7Rtef+kEc1c9FoSEs98WeDjzo68I6fc4uyptAqIFlvTiVVW0zeQ5tQJwmgKmyI9/zOEC93TZac1drH6JtGm2wmNN7MAvW9T8DHKNTQB0AmN4UKCvvqBBHxD6s7O2+JyiqP5+b2A3ldVnpUQVEFo=
