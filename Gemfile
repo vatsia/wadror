@@ -70,6 +70,7 @@ end
 gem 'httparty'
 ruby '2.2.0'
 gem 'jquery-turbolinks'
+gem 'omniauth-github'
 
 gem 'bootstrap-sass'
 group :development do
